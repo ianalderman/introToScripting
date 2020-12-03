@@ -1,0 +1,9 @@
+#Based on https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-powershell
+
+#These are the commands:
+New-AzResourceGroup -Name introToScriptingResourceGroup -Location NorthEurope
+
+New-AzVm -ResourceGroupName introToScriptingResourceGroup -Name DemoVM1 -Location "NorthEurope"
+
+
+

@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters" : {
+      "location": {
+        "type": "String",
+        "defaultValue": "North Europe",
+        "allowedValues": ["East US", "West US", "West Europe", "North Europe", "East Asia", "South East Asia"],
+        "metadata" : {
+          "Description" : "Deployment location"
+        }
+      }
+    },
+    "resources":[
+        {
+        "name": "vnARMTemplate",
+        "type": "Microsoft.Network/virtualNetworks",
+        "apiVersion": "2020-06-01",
+        "location": "[resourceGroup().location]",
+        "tags": {},
+        "properties": {
+            "addressSpace": {
+                "addressPrefixes": [
+                    "10.0.0.0/16"
+                ]
+            },
+            "subnets": [
+                {
+                    "name": "snDMZ",
+                    "properties": {
+                        "addressPrefix": "10.0.0.0/24"
+                    }
+                },
+                {
+                    "name": "snApp",
+                    "properties": {
+                        "addressPrefix": "10.0.1.0/24"
+                    }
+                }
+            ]
+        }
+        }
+    ]
+}

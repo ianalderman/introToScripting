@@ -1,0 +1,2 @@
+New-AzResourceGroup -Name rg-ne-psArmTemplateDeployment -Location "northeurope"
+New-AzResourceGroupDeployment -Name deployPSTemplate -ResourceGroupName rg-ne-psArmTemplateDeployment -TemplateFile ../azureDeploy.json
