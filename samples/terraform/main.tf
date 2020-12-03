@@ -7,7 +7,7 @@ provider "azurerm" {
     features {}
 }
 
-resource "azurerm_resource_group" "rgTterraformNetwork" {
+resource "azurerm_resource_group" "rgTerraformNetwork" {
     name = var.network_resource_group
     location = var.primary_region
 }
